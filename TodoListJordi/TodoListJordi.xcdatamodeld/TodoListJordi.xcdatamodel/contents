@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="activarFechaLimite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="completado" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="fechaCreacion" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fechaLimite" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="imagenData" optional="YES" attributeType="Binary"/>
+        <attribute name="importancia" optional="YES" attributeType="String"/>
+        <attribute name="notas" optional="YES" attributeType="String"/>
+        <attribute name="titulo" optional="YES" attributeType="String"/>
+        <relationship name="lista" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lista" inverseName="items" inverseEntity="Lista"/>
+    </entity>
+    <entity name="Lista" representedClassName="Lista" syncable="YES" codeGenerationType="class">
+        <attribute name="descripcion" optional="YES" attributeType="String"/>
+        <attribute name="imagenData" optional="YES" attributeType="Binary"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="lista" inverseEntity="Item"/>
+    </entity>
+</model>
